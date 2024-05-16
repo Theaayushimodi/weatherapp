@@ -1,0 +1,12 @@
+{% extends "base_generic.html" %}
+
+{% block content %}
+  <h2>Log in</h2>
+  <form method="post">
+    {% csrf_token %}
+    {{ form.as_p }}
+    <button type="submit">Log in</button>
+  </form>
+  <p>Or log in with:</p>
+  <a href="{% url 'google_login' %}"><img src="{% static 'img/google_signin_button.png' %}" alt="Google Sign-In"></a>
+{% endblock %}
